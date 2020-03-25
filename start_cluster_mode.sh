@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+#Change replication factor as you wish
+REPLICATION_FACTOR=1
+
 set -ex
 
 if [ -z "$(which redis-cli)" ]; then
@@ -18,6 +21,6 @@ for port in "${PORTS[@]}"; do
 
 
 
-eval redis-cli "--cluster create $CLUSTER_ARGS"
+eval redis-cli "--cluster create $CLUSTER_ARGS --cluster-replicas $REPLICATION_FACTOR"
 
 
