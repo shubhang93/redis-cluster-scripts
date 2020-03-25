@@ -4,8 +4,8 @@ set -ex
 # Change port binding
 PORT=7000
 
-if [ -z "$(which redis-server)" ]; then
-    printf "redis-server not found!"
+if [ -z "$(which redis-cli)" ]; then
+    printf "redis-cli not found!"
     exit 1
 fi
 
