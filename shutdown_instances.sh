@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex
+set -x
 
 
 PORTS=(7000 7001 7002 7003 7004 7005)
