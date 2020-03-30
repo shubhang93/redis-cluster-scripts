@@ -20,7 +20,7 @@ REPLICATION_FACTOR=1
 
 clone the repo inside and run the scripts in the following order
 ```shell script
-create-config.sh
+create_config.sh
 start_instances.sh
 start_cluster_mode.sh
 ```   
