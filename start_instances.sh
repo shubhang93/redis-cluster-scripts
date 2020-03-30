@@ -3,6 +3,7 @@ set -aex
 source .env
 set +a
 
+IFS="," read -ra CLUSTER_PORTS <<< "$PORTS"
 
 if [ -z "$(which redis-server)" ]; then
     printf "redis-server not found!"
@@ -10,7 +11,7 @@ if [ -z "$(which redis-server)" ]; then
 fi
 
 
-for port in "${PORTS[@]}"; do
+for port in "${CLUSTER_PORTS[@]}"; do
   printf "Starting instance :%s\n" "$port"
   (cd "$port" && redis-server ./redis.conf >/dev/null &)
 done
