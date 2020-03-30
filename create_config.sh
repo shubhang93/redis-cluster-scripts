@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-set -ex
+set -aex
+source .env
+set +a
 
 
-# Change the default port bindings
-CLUSTER_PORTS=(7000 7001 7002 7003 7004 7005)
+IFS="," read -ra CLUSTER_PORTS <<< "$PORTS"
+
 
 # Config source https://redis.io/topics/cluster-tutorial
 for port in "${CLUSTER_PORTS[@]}";do

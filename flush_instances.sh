@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
-set -x
+set -ax
+source .env
+set +a
 
-CLUSTER_PORTS=(7000 7001 7002 7003 7004 7005)
+
+IFS="," read -ra CLUSTER_PORTS <<< "$PORTS"
+
+
 
 for port in "${CLUSTER_PORTS[@]}";do
   rm "./$port/nodes.conf"
