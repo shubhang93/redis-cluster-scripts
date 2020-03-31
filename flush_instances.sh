@@ -4,9 +4,8 @@ source .env
 set +a
 
 
+
 IFS="," read -ra CLUSTER_PORTS <<< "$PORTS"
-
-
 
 for port in "${CLUSTER_PORTS[@]}";do
   rm "./$port/nodes.conf"
