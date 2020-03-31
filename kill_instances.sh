@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-set -ex
+set -e
 
 kill $(pgrep "redis-server \*:[0-9]+ \[cluster\]")

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -ax
+set -a
 source .env
 set +a
 
